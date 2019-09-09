@@ -31,12 +31,14 @@ export default new VueRouter({
             component:signup
         },
         {
+            name:'success',
             path:'/success',
             component:success
         },{
             path:'/check',
             component:check
         },{
+            name:'checkinfo',
             path:'/checkinfo',
             component:checkinfo
         },{

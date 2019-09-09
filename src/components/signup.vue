@@ -74,9 +74,10 @@
         <el-input type="textarea" v-model="signup.description" maxlength="50" show-word-limit></el-input>
       </el-form-item>
       <!-- <el-form-item> -->
-        <div class="button">
-          <el-button>提交</el-button>
-        </div>
+      <div class="button">
+        <div v-show="showerr" class="errmsg">{{errmsg}}</div>
+        <el-button @click="onSubmit">提交</el-button>
+      </div>
       <!-- </el-form-item> -->
     </el-form>
   </div>
@@ -101,11 +102,11 @@ export default {
       },
       sex: [
         {
-          value: 1,
+          value: "男",
           label: "男"
         },
         {
-          value: 2,
+          value: "女",
           label: "女"
         }
       ],
@@ -162,7 +163,9 @@ export default {
           value: "否",
           label: "否"
         }
-      ]
+      ],
+      showerr: false,
+      errmsg: ""
     };
   },
   mounted: function() {
@@ -187,7 +190,7 @@ export default {
           //第二遍使用map()将数据传入this.schools中
           var newArr = jsonArr.map(val => {
             let json = {};
-            json.value = val.value;
+            json.value = val.label;
             json.label = val.label;
             return json;
           });
@@ -223,13 +226,51 @@ export default {
             }
             var newArr = jsonArr.map(val => {
               let json = {};
-              json.value = val.value;
+              json.value = val.label;
               json.label = val.label;
               return json;
             });
             this.departments = newArr;
           }
           console.log(response);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    onSubmit() {
+      var data = new FormData();
+      data.append("username", this.signup.name);
+      data.append("sex", this.signup.sex);
+      data.append("grade", this.signup.grade);
+      data.append("area", this.signup.area);
+      data.append("school", this.signup.school);
+      data.append("dormitory", this.signup.dormitory);
+      data.append("first", this.signup.first);
+      data.append("second", this.signup.second);
+      data.append("phone", this.signup.phone);
+      data.append("adjust", this.signup.adjust);
+      data.append("description", this.signup.description);
+      this.$axios
+        .post("http://111.230.183.100:5000/recruit", data, {
+          headers: {
+            "Content-Type": "application/json"
+          },
+          withCredentials: true
+        })
+        .then(response => {
+          console.log(response);
+          var res = response.data;
+          if (res.errcode === 1) {
+            this.$router.push({
+              name: "success",
+              params: { status: "报名" }
+            });
+          } else {
+            this.showerr = true;
+            this.errmsg = res.errmsg;
+            console.log(res.errmag);
+          }
         })
         .catch(err => {
           console.log(err);
@@ -247,5 +288,10 @@ export default {
 .button {
   margin: 0;
   text-align: center;
+}
+.errmsg {
+  color: red;
+  font-size: 10px;
+  margin: 3%;
 }
 </style>
