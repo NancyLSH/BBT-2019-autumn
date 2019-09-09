@@ -3,7 +3,7 @@
     <h1>查看报名</h1>
     <el-form label-position="left" label-width="20%" :model="check">
       <el-form-item label="手机号">
-        <el-input v-model="check.phone" maxlength="11" show-word-limit></el-input>
+        <el-input v-model="check.phone" maxlength="11"></el-input>
       </el-form-item>
       <el-form-item label="姓名">
         <el-input v-model="check.username"></el-input>
@@ -13,6 +13,9 @@
         <el-button @click="onCheck">点击查看</el-button>
       </div>
     </el-form>
+      <div class="bottom">
+        <img src="../assets/3.png" style="width:100%" />
+      </div>
   </div>
 </template>
 
@@ -71,21 +74,37 @@ export default {
 };
 </script>
 
-<style scoped>
-h1 {
-  margin: 5% 0;
-  text-align: center;
+<style>
+.check {
+  background-color: #f2f7dc;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
-form {
+.check h1 {
+  text-align: left;
+  color: #8c523b;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+.check form {
   margin: 20% auto;
   width: 80%;
 }
-.btn {
+.check .btn {
   text-align: center;
 }
 .errmsg {
   color: red;
   font-size: 10px;
   margin: 3%;
+}
+.bottom{
+  position: absolute;
+    bottom: 0;
+}
+.check .btn{
+  margin-top:25%;
 }
 </style>

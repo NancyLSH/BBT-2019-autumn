@@ -1,85 +1,106 @@
 <template>
-  <div class="signup">
-    <el-form label-position="left" label-width="20%" :model="signup">
-      <el-form-item label="姓名">
-        <el-input v-model="signup.name"></el-input>
-      </el-form-item>
-      <el-form-item label="性别">
-        <el-select v-model="signup.sex" placeholder="请选择">
-          <el-option v-for="item in sex" :key="item.value" :label="item.label" :value="item.value"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="年级">
-        <el-select v-model="signup.grade" placeholder="请选择">
-          <el-option
-            v-for="item in grade"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="校区">
-        <el-select v-model="signup.area" placeholder="请选择" @change="changeArea(signup.area)">
-          <el-option v-for="item in area" :key="item.value" :label="item.label" :value="item.value"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="学院">
-        <el-select v-model="signup.school" placeholder="请选择">
-          <el-option
-            v-for="item in schools"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="宿舍">
-        <el-input placeholder="Cx-xxx/西x-xxx" v-model="signup.dormitory"></el-input>
-      </el-form-item>
-      <el-form-item label="手机">
-        <el-input v-model="signup.phone" maxlength="11" show-word-limit></el-input>
-      </el-form-item>
-      <el-form-item label="第一志愿">
-        <el-select v-model="signup.first" placeholder="请选择">
-          <el-option
-            v-for="item in departments"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="第二志愿">
-        <el-select v-model="signup.second" placeholder="请选择">
-          <el-option
-            v-for="item in departments"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="是否服从调剂">
-        <el-select v-model="signup.adjust">
-          <el-option
-            v-for="item in adjustment"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="自我介绍">
-        <el-input type="textarea" v-model="signup.description" maxlength="50" show-word-limit></el-input>
-      </el-form-item>
-      <!-- <el-form-item> -->
-      <div class="button">
-        <div v-show="showerr" class="errmsg">{{errmsg}}</div>
-        <el-button @click="onSubmit">提交</el-button>
-      </div>
-      <!-- </el-form-item> -->
-    </el-form>
+  <div class="bg">
+    <h2>信息填写</h2>
+    <div class="signup">
+      <el-form label-position="left" label-width="20%" :model="signup">
+        <el-form-item label="姓名">
+          <el-input v-model="signup.name"></el-input>
+        </el-form-item>
+        <el-form-item label="性别">
+          <el-select v-model="signup.sex">
+            <el-option
+              v-for="item in sex"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="年级">
+          <el-select v-model="signup.grade">
+            <el-option
+              v-for="item in grade"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="校区">
+          <el-select v-model="signup.area" @change="changeArea(signup.area)">
+            <el-option
+              v-for="item in area"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="学院">
+          <el-select v-model="signup.school">
+            <el-option
+              v-for="item in schools"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="宿舍">
+          <el-input placeholder="Cx-xxx/西x-xxx" v-model="signup.dormitory"></el-input>
+        </el-form-item>
+        <el-form-item label="手机">
+          <el-input v-model="signup.phone" maxlength="11"></el-input>
+        </el-form-item>
+        <el-form-item label="第一志愿">
+          <el-select v-model="signup.first">
+            <el-option
+              v-for="item in departments"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="第二志愿">
+          <el-select v-model="signup.second">
+            <el-option
+              v-for="item in departments"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="是否服从调剂">
+          <el-select v-model="signup.adjust">
+            <el-option
+              v-for="item in adjustment"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="自我介绍">
+          <el-input
+            type="textarea"
+            placeholder="不得多于50字噢"
+            v-model="signup.description"
+            maxlength="50"
+          ></el-input>
+        </el-form-item>
+        <!-- <el-form-item> -->
+        <div class="button">
+          <div v-show="showerr" class="errmsg">{{errmsg}}</div>
+          <el-button @click="onSubmit">提交</el-button>
+        </div>
+        <!-- </el-form-item> -->
+      </el-form>
+    </div>
+    <div class="bottom-pic">
+      <img src="../assets/3.png" style="width:100%" />
+    </div>
   </div>
 </template>
 
@@ -280,10 +301,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.bg {
+  background-color: #f2f7dc;
+}
 .signup {
   width: 85%;
   margin: 10% auto;
+}
+.el-form-item__label {
+  color: #8c523b;
+}
+.bg h2 {
+  text-align: left;
+  color: #8c523b;
+  padding-top: 10%;
+  padding-left: 5%;
 }
 .button {
   margin: 0;
@@ -293,5 +326,24 @@ export default {
   color: red;
   font-size: 10px;
   margin: 3%;
+}
+.el-input input,
+.el-textarea textarea {
+  background-color: transparent;
+  border: #996148 dashed 2px;
+  border-radius: 9pt;
+  color: #996148;
+}
+.el-button {
+  border: #89c997 solid 1px;
+  color: #89c997;
+  background-color: transparent;
+  width: 50%;
+  border-radius: 9pt;
+}
+.el-button:hover {
+  background-color: #89c997;
+  color: #ffffff;
+  outline:none;
 }
 </style>

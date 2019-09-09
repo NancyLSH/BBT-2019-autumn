@@ -9,9 +9,16 @@
     >
       <el-carousel-item v-for="item in description" :key="item.value">
         <h1>{{item.title}}</h1>
+        <div class="pic"><img src="../assets/4.png" style="width:70%"></div>
         <div class="content">{{item.content}}</div>
       </el-carousel-item>
     </el-carousel>
+    <div class="btn">
+      <el-button @click="toSignup">立即报名</el-button>
+    </div>
+    <div class="bottom-pic">
+      <img style="width:100%" src="../assets/3.png" />
+    </div>
   </div>
 </template>
 
@@ -94,6 +101,11 @@ export default {
   mounted() {
     this.index = this.$route.params.i;
     console.log(this.index);
+  },
+  methods:{
+    toSignup(){
+      this.$router.push('/signup')
+    }
   }
 };
 </script>
@@ -101,11 +113,23 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
-  margin: 10% 0;
+  margin: 30% 0 10% 0;
+  color:#4C6255;
+  font-weight: 100;
+}
+.detail{
+  background-color: #F2F7DC;
 }
 .content {
   margin: 10% 20%;
   overflow: scroll;
-  height: 500px;
+  height: 360px;
+  color:#4C6255;
+}
+.btn{
+      margin: 10% auto;
+}
+.pic,.btn{
+  text-align: center;
 }
 </style>
