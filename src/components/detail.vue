@@ -126,10 +126,16 @@ h1 {
   height: 360px;
   color:#4C6255;
 }
-.btn{
-      margin: 10% auto;
+.detail .btn{
+  position: absolute;
+  top:100%;
+  margin:0;
 }
-.pic,.btn{
+.pic,.detail .btn{
   text-align: center;
+}
+.detail .btn button{
+  margin:auto;
+  width:60%
 }
 </style>

@@ -313,6 +313,7 @@ export default {
   color: #8c523b;
 }
 .bg h2 {
+  font-weight: 100;
   text-align: left;
   color: #8c523b;
   padding-top: 10%;
@@ -334,16 +335,20 @@ export default {
   border-radius: 9pt;
   color: #996148;
 }
+.signup .button button {
+  margin: auto;
+  width: 60%;
+}
 .el-button {
   border: #89c997 solid 1px;
   color: #89c997;
   background-color: transparent;
-  width: 50%;
+  width: 60%;
   border-radius: 9pt;
 }
 .el-button:hover {
   background-color: #89c997;
   color: #ffffff;
-  outline:none;
+  outline: none;
 }
 </style>

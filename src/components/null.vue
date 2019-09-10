@@ -5,6 +5,7 @@
             <el-button @click="toSignup">前往报名</el-button>
             <el-button @click="toHome">返回</el-button>
         </div>
+        <div class="bottom"><img src="../assets/3.png" style="width:100%"></div>
     </div>
 </template>
 
@@ -22,6 +23,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.null{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#f2f7dc;
+}
 
+.null .el-button{
+    margin:5% auto;
+    width:60%;
+}
+/* .el-button + .el-button {
+    margin-left: 0;
+} */
 </style>

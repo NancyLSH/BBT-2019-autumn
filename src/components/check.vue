@@ -87,6 +87,7 @@ export default {
   color: #8c523b;
   padding-top: 10%;
   padding-left: 10%;
+  margin-top:25%;
 }
 .check form {
   margin: 20% auto;
@@ -106,5 +107,8 @@ export default {
 }
 .check .btn{
   margin-top:25%;
+}
+.check .btn button{
+  margin:auto
 }
 </style>
