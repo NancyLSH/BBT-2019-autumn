@@ -9,7 +9,7 @@
       <el-button @click="toCheck">查看报名</el-button>
     </div>
     <div class="bottom-pic">
-      <img src="../assets/2.png" />
+      <img src="../../public/static/2.png" />
     </div>
   </div>
 </template>

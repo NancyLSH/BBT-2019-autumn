@@ -5,7 +5,7 @@
             <el-button @click="toSignup">前往报名</el-button>
             <el-button @click="toHome">返回</el-button>
         </div>
-        <div class="bottom"><img src="../assets/3.png" style="width:100%"></div>
+        <div class="bottom"><img src="../../public/static/3.png" style="width:100%"></div>
     </div>
 </template>
 

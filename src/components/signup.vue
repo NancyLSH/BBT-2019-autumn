@@ -99,7 +99,7 @@
       </el-form>
     </div>
     <div class="bottom-pic">
-      <img src="../assets/3.png" style="width:100%" />
+      <img src="../../public/static/3.png" style="width:100%" />
     </div>
   </div>
 </template>
