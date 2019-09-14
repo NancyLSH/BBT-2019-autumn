@@ -8,6 +8,7 @@
       <el-button @click="toIntroduction">部门介绍</el-button>
       <el-button @click="toCheck">查看报名</el-button>
     </div>
+    <div class="href" @click="toBackstage">内部查询请点击此处</div>
     <div class="bottom-pic">
       <img src="../assets/2.png" />
     </div>
@@ -26,6 +27,9 @@ export default {
     },
     toCheck() {
       this.$router.push("/check");
+    },
+    toBackstage(){
+      this.$router.push("/backstage")
     }
   }
 };
@@ -67,6 +71,7 @@ export default {
 }
 .bottom-pic img {
   width: 100%;
+  vertical-align: bottom;
 }
 .el-button {
   border: #89c997 solid 1px;
@@ -79,5 +84,12 @@ export default {
   background-color: #89c997;
   color: #ffffff;
   outline:none;
+}
+.href{
+  color:white;
+  position: relative;
+  bottom:2%;
+  font-size: 12px;
+  z-index: 3;
 }
 </style>

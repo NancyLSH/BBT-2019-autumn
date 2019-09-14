@@ -7,53 +7,58 @@ import signup from "../components/signup"
 import success from "../components/success"
 import check from "../components/check"
 import checkinfo from "../components/checkinfo"
-import change from "../components/change"
 import introduction from "../components/introduction"
 import detail from "../components/detail"
 import nosignup from "../components/null"
+import backstage from "../components/backstage"
+import backstageinfo from "../components/backstageinfo"
 
 Vue.use(VueRouter)
 Vue.use(Meta)
 
 export default new VueRouter({
-    mode:'history',
-    routes:[
-        {
-            path:'/entry',
-            component:entry
+    mode: 'history',
+    routes: [{
+            path: '/entry',
+            component: entry
         },
         {
-            path:'/home',
-            component:home
+            path: '/home',
+            component: home
         },
         {
-            path:'/signup',
-            component:signup
+            path: '/signup',
+            component: signup
         },
         {
-            name:'success',
-            path:'/success',
-            component:success
+            name: 'success',
+            path: '/success',
+            component: success
+        }, {
+            path: '/check',
+            component: check
+        }, {
+            name: 'checkinfo',
+            path: '/checkinfo',
+            component: checkinfo
+        }, {
+            path: '/introduction',
+            component: introduction
+        }, {
+            name: 'detail',
+            path: '/detail',
+            component: detail
+        }, {
+            path: '/nosignup',
+            component: nosignup
+        },
+        {
+            path: '/backstage',
+            component: backstage
         },{
-            path:'/check',
-            component:check
-        },{
-            name:'checkinfo',
-            path:'/checkinfo',
-            component:checkinfo
-        },{
-            path:'/change',
-            component:change
-        },{
-            path:'/introduction',
-            component:introduction
-        },{
-            name:'detail',
-            path:'/detail',
-            component:detail
-        },{
-            path:'/nosignup',
-            component:nosignup
+            name:'backstageinfo',
+            path:'/backstageinfo',
+            component:backstageinfo
         }
     ]
 })

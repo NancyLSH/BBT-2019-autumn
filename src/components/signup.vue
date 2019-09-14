@@ -7,7 +7,7 @@
           <el-input v-model="signup.name"></el-input>
         </el-form-item>
         <el-form-item label="性别">
-          <el-select v-model="signup.sex">
+          <el-select v-model="signup.sex"  style="width:100%">
             <el-option
               v-for="item in sex"
               :key="item.value"
@@ -17,7 +17,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="年级">
-          <el-select v-model="signup.grade">
+          <el-select v-model="signup.grade"  style="width:100%">
             <el-option
               v-for="item in grade"
               :key="item.value"
@@ -27,7 +27,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="校区">
-          <el-select v-model="signup.area" @change="changeArea(signup.area)">
+          <el-select v-model="signup.area" @change="changeArea(signup.area)"  style="width:100%">
             <el-option
               v-for="item in area"
               :key="item.value"
@@ -37,7 +37,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="学院">
-          <el-select v-model="signup.school">
+          <el-select v-model="signup.school"  style="width:100%">
             <el-option
               v-for="item in schools"
               :key="item.value"
@@ -53,7 +53,7 @@
           <el-input v-model="signup.phone" maxlength="11"></el-input>
         </el-form-item>
         <el-form-item label="第一志愿">
-          <el-select v-model="signup.first">
+          <el-select v-model="signup.first"  style="width:100%">
             <el-option
               v-for="item in departments"
               :key="item.value"
@@ -63,7 +63,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="第二志愿">
-          <el-select v-model="signup.second">
+          <el-select v-model="signup.second"  style="width:100%">
             <el-option
               v-for="item in departments"
               :key="item.value"
@@ -73,7 +73,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="是否服从调剂">
-          <el-select v-model="signup.adjust">
+          <el-select v-model="signup.adjust"  style="width:100%">
             <el-option
               v-for="item in adjustment"
               :key="item.value"
@@ -99,7 +99,7 @@
       </el-form>
     </div>
     <div class="bottom-pic">
-      <img src="../assets/3.png" style="width:100%" />
+      <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
 </template>

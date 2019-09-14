@@ -3,7 +3,7 @@
     <img class="bbt" src="../assets/1-1.png" />
     <img class="calendar" src="../assets/1-3.png" />
     <div class="bottom-pic">
-      <img src="../assets/1-2.png" />
+      <img src="../assets/1-2.png" style="vertical-align: bottom;" />
     </div>
     <div class="tip">
       <div>轻触屏幕跳转</div>

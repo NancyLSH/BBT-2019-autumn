@@ -14,7 +14,7 @@
       </div>
     </el-form>
       <div class="bottom">
-        <img src="../assets/3.png" style="width:100%" />
+        <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
       </div>
   </div>
 </template>

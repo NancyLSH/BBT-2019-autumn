@@ -11,7 +11,7 @@
     <el-button type="info" @click="toDetail(8)">视觉设计部介绍</el-button>
     <el-button type="info" @click="toDetail(9)">技术部介绍</el-button>
     <el-button type="info" @click="toDetail(10)">视频部介绍</el-button>
-    <div class="bottom-pic"><img src="../assets/3.png" style="width:100%"></div>
+    <div class="bottom-pic"><img src="../assets/3.png" style="width:100%;vertical-align: bottom;"></div>
   </div>
 </template>
 

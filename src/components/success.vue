@@ -6,7 +6,7 @@
       <el-button @click="toCheck">查看</el-button>
     </div>
     <div class="bg">
-      <img src="../assets/3.png" style="width:100%" />
+      <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
 </template>

@@ -9,7 +9,9 @@
     >
       <el-carousel-item v-for="item in description" :key="item.value">
         <h1>{{item.title}}</h1>
-        <div class="pic"><img src="../assets/4.png" style="width:70%"></div>
+        <div class="pic">
+          <img src="../assets/4.png" style="width:70%" />
+        </div>
         <div class="content">{{item.content}}</div>
       </el-carousel-item>
     </el-carousel>
@@ -17,7 +19,7 @@
       <el-button @click="toSignup">立即报名</el-button>
     </div>
     <div class="bottom-pic">
-      <img style="width:100%" src="../assets/3.png" />
+      <img style="width:100%;vertical-align: bottom;" src="../assets/3.png" />
     </div>
   </div>
 </template>
@@ -102,9 +104,9 @@ export default {
     this.index = this.$route.params.i;
     console.log(this.index);
   },
-  methods:{
-    toSignup(){
-      this.$router.push('/signup')
+  methods: {
+    toSignup() {
+      this.$router.push("/signup");
     }
   }
 };
@@ -114,28 +116,29 @@ export default {
 h1 {
   text-align: center;
   margin: 30% 0 10% 0;
-  color:#4C6255;
+  color: #4c6255;
   font-weight: 100;
 }
-.detail{
-  background-color: #F2F7DC;
+.detail {
+  background-color: #f2f7dc;
 }
 .content {
   margin: 10% 20%;
   overflow: scroll;
   height: 360px;
-  color:#4C6255;
+  color: #4c6255;
 }
-.detail .btn{
+.detail .btn {
   position: absolute;
-  top:100%;
-  margin:0;
+  bottom: -5%;
+  margin: 0;
 }
-.pic,.detail .btn{
+.pic,
+.detail .btn {
   text-align: center;
 }
-.detail .btn button{
-  margin:auto;
-  width:60%
+.detail .btn button {
+  margin: auto;
+  width: 60%;
 }
 </style>
