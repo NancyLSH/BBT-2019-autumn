@@ -9,13 +9,7 @@
     >
       <el-carousel-item v-for="item in description" :key="item.value">
         <h1>{{item.title}}</h1>
-<<<<<<< HEAD
         <div class="pic"><img src="../../public/static/4.png" style="width:70%"></div>
-=======
-        <div class="pic">
-          <img src="../assets/4.png" style="width:70%" />
-        </div>
->>>>>>> 5bf0c726e5803e2ebc7898314d792ecc8699aed3
         <div class="content">{{item.content}}</div>
       </el-carousel-item>
     </el-carousel>
@@ -23,11 +17,7 @@
       <el-button @click="toSignup">立即报名</el-button>
     </div>
     <div class="bottom-pic">
-<<<<<<< HEAD
-      <img style="width:100%" src="../../public/static/3.png" />
-=======
-      <img style="width:100%;vertical-align: bottom;" src="../assets/3.png" />
->>>>>>> 5bf0c726e5803e2ebc7898314d792ecc8699aed3
+      <img style="width:100%;vertical-align: bottom;" src="../../public/static/3.png" />
     </div>
   </div>
 </template>
