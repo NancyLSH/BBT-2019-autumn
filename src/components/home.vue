@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import {wxshare} from "../api/api"
 export default {
   name: "home",
   methods: {
@@ -31,6 +32,9 @@ export default {
     toBackstage(){
       this.$router.push("/backstage")
     }
+  },
+  mounted:function(){
+    // wxshare(this)
   }
 };
 </script>

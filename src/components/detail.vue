@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { wxshare } from '../api/api';
 
 export default {
   name: "detail",
@@ -100,6 +101,7 @@ export default {
     };
   },
   mounted() {
+    // wxshare(this)
     this.index = this.$route.params.i;
     console.log(this.index);
   },

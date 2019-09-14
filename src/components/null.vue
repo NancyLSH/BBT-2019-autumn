@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import {wxshare} from "../api/api"
 export default {
     name:'nosignup',
     methods:{
@@ -19,6 +20,9 @@ export default {
         toHome(){
             this.$router.push('/home')
         }
+    },
+    mounted:function(){
+        // wxshare(this)
     }
 }
 </script>

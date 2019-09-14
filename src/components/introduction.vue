@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import {wxshare} from "../api/api"
 export default {
   name: "introduction",
   methods: {
@@ -27,6 +28,9 @@ export default {
         }
       });
     }
+  },
+  mounted:function(){
+    // wxshare(this)
   }
 };
 </script>

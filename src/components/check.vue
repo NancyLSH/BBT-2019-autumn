@@ -13,13 +13,20 @@
         <el-button @click="onCheck">点击查看</el-button>
       </div>
     </el-form>
-      <div class="bottom">
-        <img src="../../public/static/3.png" style="width:100%;vertical-align: bottom;" />
-      </div>
+    <div class="bottom">
+      <img src="../../public/static/3.png" style="width:100%;vertical-align: bottom;" />
+    </div>
   </div>
 </template>
 
 <script>
+import { host, wxshare } from "../api/api";
+const header = {
+  headers: {
+    "Content-Type": "application/json"
+  },
+  withCredentials: true
+};
 export default {
   name: "check",
   data() {
@@ -38,12 +45,7 @@ export default {
       data.append("username", this.check.username);
       data.append("phone", this.check.phone);
       this.$axios
-        .post("http://111.230.183.100:5000/judgeRecruit", data, {
-          headers: {
-            "Content-Type": "application/json"
-          },
-          withCredentials: true
-        })
+        .post(host + "/judgeRecruit", data, header)
         .then(response => {
           console.log(response);
           var res = response.data;
@@ -69,6 +71,9 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    mounted:function(){
+      // wxshare(this)
     }
   }
 };
@@ -87,7 +92,7 @@ export default {
   color: #8c523b;
   padding-top: 10%;
   padding-left: 10%;
-  margin-top:25%;
+  margin-top: 25%;
 }
 .check form {
   margin: 20% auto;
@@ -101,15 +106,15 @@ export default {
   font-size: 10px;
   margin: 3%;
 }
-.bottom{
+.bottom {
   position: absolute;
-    bottom: 0;
+  bottom: 0;
 }
-.check .btn{
-  margin-top:25%;
+.check .btn {
+  margin-top: 25%;
 }
-.check .btn button{
-  margin:auto
+.check .btn button {
+  margin: auto;
 }
 </style>
 

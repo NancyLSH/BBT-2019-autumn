@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import {wxshare} from "../api/api"
 export default {
   name: "success",
   data() {
@@ -20,6 +21,7 @@ export default {
     };
   },
   mounted() {
+    // wxshare(this)
     this.status = this.$route.params.status;
   },
   methods: {
