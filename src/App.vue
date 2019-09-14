@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      isRouterAlive: true
+      isRouterAlive: true,
     };
   },
   mounted() {

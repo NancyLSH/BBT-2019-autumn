@@ -11,7 +11,7 @@
   <!-- </text> -->
 </svg>
     <div class="bottom-pic">
-      <img src="../../public/static/1-2.png" />
+      <img src="../../public/static/1-2.png"  style="vertical-align: bottom;" />
     </div>
     <div class="tip">
       <div>轻触屏幕跳转</div>
