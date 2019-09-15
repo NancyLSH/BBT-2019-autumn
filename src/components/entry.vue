@@ -2,7 +2,7 @@
   <div class="bottom" @click="toHome">
     <img class="bbt" src="../../public/static/1-1.png" />
     <img class="calendar" src="../../public/static/1-3.png" />
-    <svg width="300" height="5000" xmlns="http://www.w3.org/2000/svg">
+    <svg width="300" height="500" xmlns="http://www.w3.org/2000/svg">
       <image id="leaf" xlink:href="../../public/static/1-4.png" x="0" y="0" height="60" width="60" />
       <animateMotion
         xlink:href="#leaf"
@@ -56,7 +56,7 @@ export default {
   /* 为什么100%出现滚动条,app本身有自带的margin，用*{}去掉即可 */
 }
 .tip {
-  z-index: 2;
+  z-index: 35;
   position: absolute;
   bottom: 4%;
   left: 30%;

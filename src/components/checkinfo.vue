@@ -90,17 +90,15 @@
         <el-form-item label="自我介绍">
           <el-input type="textarea" v-model="signup.description" maxlength="50"></el-input>
         </el-form-item>
-        <!-- <el-form-item> -->
         <div class="button">
           <div class="errmsg" v-show="showerr">{{errmsg}}</div>
           <el-button @click="onChange">修改</el-button>
           <el-button @click="toHome">返回</el-button>
         </div>
-        <!-- </el-form-item> -->
       </el-form>
     </div>
     <div class="bottom">
-      <img src="../../public/static/3.png" style="width:100%;vertical-align: bottom;" />
+      <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
 </template>
@@ -118,7 +116,7 @@ export default {
   data() {
     return {
       signup: {
-        name: "",
+        username: "",
         sex: "",
         grade: "",
         area: "",
@@ -144,20 +142,7 @@ export default {
         {
           value: "大一",
           label: "大一"
-        },
-        {
-          value: "大二",
-          label: "大二"
-        },
-        {
-          value: "大三",
-          label: "大三"
-        },
-        {
-          value: "大四",
-          label: "大四"
-        }
-      ],
+        }],
       area: [
         {
           value: "南校",
@@ -254,7 +239,7 @@ export default {
     },
     onChange() {
       var data = new FormData();
-      data.append("username", this.signup.name);
+      data.append("username", this.signup.username);
       data.append("sex", this.signup.sex);
       data.append("grade", this.signup.grade);
       data.append("area", this.signup.area);
