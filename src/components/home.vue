@@ -8,9 +8,13 @@
       <el-button @click="toIntroduction">部门介绍</el-button>
       <el-button @click="toCheck">查看报名</el-button>
     </div>
-    <div class="href" @click="toBackstage">内部查询请点击此处</div>
+    <!-- <div class="href" @click="toBackstage">内部查询请点击此处</div> -->
     <div class="bottom-pic">
+<<<<<<< HEAD
       <img src="../../src/assets/2.png" />
+=======
+      <img src="../assets/2.png" />
+>>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
     </div>
   </div>
 </template>

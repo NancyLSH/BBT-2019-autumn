@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <el-carousel
-      height="650px"
+      height="590px"
       :initial-index="index"
       :autoplay="false"
       indicator-position="none"
@@ -17,7 +17,11 @@
       <el-button @click="toSignup">立即报名</el-button>
     </div>
     <div class="bottom-pic">
+<<<<<<< HEAD
       <img style="width:100%;vertical-align: bottom;" src="../../src/assets/3.png" />
+=======
+      <img style="width:100%;vertical-align: bottom;" src="../assets/3.png" />
+>>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
     </div>
   </div>
 </template>
@@ -116,22 +120,31 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
-  margin: 30% 0 10% 0;
+  /* margin: 30% 0 10% 0; */
   color: #4c6255;
   font-weight: 100;
+  margin-top:45%;
 }
 .detail {
   background-color: #f2f7dc;
+  position: absolute;
+  width:100%;
+  bottom:0;
 }
 .content {
   margin: 10% 20%;
   overflow: scroll;
-  height: 360px;
+  height: 200px;
   color: #4c6255;
 }
 .detail .btn {
+<<<<<<< HEAD
   position: absolute;
   bottom: -25%;
+=======
+  position: relative;
+  bottom: 0;
+>>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
   margin: 0;
 }
 .pic,
@@ -141,5 +154,10 @@ h1 {
 .detail .btn button {
   margin: auto;
   width: 60%;
+  margin-top: 5%;
+}
+.detail .bottom-pic{
+ position: relative;
+ bottom:0;
 }
 </style>
