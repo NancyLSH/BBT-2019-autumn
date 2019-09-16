@@ -1,12 +1,7 @@
 <template>
   <div class="bottom" @click="toHome">
-<<<<<<< HEAD
-    <img class="bbt" src="../../src/assets/1-1.png" />
-    <img class="calendar" src="../../src/assets/1-3.png" />
-=======
     <img class="bbt" src="../../public/static/1-1.png" />
     <img class="calendar" src="../../public/static/1-3.png" />
->>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
     <svg width="300" height="500" xmlns="http://www.w3.org/2000/svg">
       <image id="leaf" xlink:href="../../public/static/1-4.png" x="0" y="0" height="60" width="60" />
       <animateMotion

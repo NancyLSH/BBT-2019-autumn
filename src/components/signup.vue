@@ -97,11 +97,7 @@
       </el-form>
     </div>
     <div class="bottom-pic">
-<<<<<<< HEAD
-      <img src="../../src/assets/3.png" style="width:100%;vertical-align: bottom;" />
-=======
       <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
->>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
     </div>
   </div>
 </template>

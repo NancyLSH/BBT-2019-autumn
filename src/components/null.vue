@@ -5,11 +5,7 @@
             <el-button @click="toSignup">前往报名</el-button>
             <el-button @click="toHome">返回</el-button>
         </div>
-<<<<<<< HEAD
-        <div class="bottom"><img src="../../src/assets/3.png" style="width:100%;vertical-align: bottom;"></div>
-=======
         <div class="bottom"><img src="../assets/3.png" style="width:100%;vertical-align: bottom;"></div>
->>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
     </div>
 </template>
 

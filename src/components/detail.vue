@@ -17,11 +17,7 @@
       <el-button @click="toSignup">立即报名</el-button>
     </div>
     <div class="bottom-pic">
-<<<<<<< HEAD
-      <img style="width:100%;vertical-align: bottom;" src="../../src/assets/3.png" />
-=======
       <img style="width:100%;vertical-align: bottom;" src="../assets/3.png" />
->>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
     </div>
   </div>
 </template>
@@ -138,13 +134,8 @@ h1 {
   color: #4c6255;
 }
 .detail .btn {
-<<<<<<< HEAD
-  position: absolute;
-  bottom: -25%;
-=======
   position: relative;
   bottom: 0;
->>>>>>> 837a611198919d64990d3a862e974dda77a9fabc
   margin: 0;
 }
 .pic,
