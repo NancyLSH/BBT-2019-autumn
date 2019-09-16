@@ -13,7 +13,7 @@
         <el-button @click="Backstage">查询</el-button>
       </div>
       <div class="bottom-pic">
-        <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
+        <img src="../../src/assets/3.png" style="width:100%;vertical-align: bottom;" />
       </div>
     </el-form>
   </div>
@@ -88,7 +88,7 @@ export default {
   margin: auto;
 }
 .backstage .btn {
-  margin-bottom: 25%;
+  margin-bottom: 10%;
 }
 .backstage .bottom-pic {
   position: absolute;

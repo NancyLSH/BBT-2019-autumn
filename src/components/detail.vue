@@ -9,7 +9,7 @@
     >
       <el-carousel-item v-for="item in description" :key="item.value">
         <h1>{{item.title}}</h1>
-        <div class="pic"><img src="../../public/static/4.png" style="width:70%"></div>
+        <div class="pic"><img src="../../src/assets/4.png" style="width:70%"></div>
         <div class="content">{{item.content}}</div>
       </el-carousel-item>
     </el-carousel>
@@ -17,7 +17,7 @@
       <el-button @click="toSignup">立即报名</el-button>
     </div>
     <div class="bottom-pic">
-      <img style="width:100%;vertical-align: bottom;" src="../../public/static/3.png" />
+      <img style="width:100%;vertical-align: bottom;" src="../../src/assets/3.png" />
     </div>
   </div>
 </template>
@@ -131,7 +131,7 @@ h1 {
 }
 .detail .btn {
   position: absolute;
-  bottom: -5%;
+  bottom: -25%;
   margin: 0;
 }
 .pic,

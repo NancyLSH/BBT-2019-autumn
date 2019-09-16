@@ -100,7 +100,7 @@
       </el-form>
     </div>
     <div class="bottom">
-      <img src="../../public/static/3.png" style="width:100%;vertical-align: bottom;" />
+      <img src="../../src/assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
 </template>
