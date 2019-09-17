@@ -1,20 +1,14 @@
 <template>
   <div class="bg">
-    <h1>信息填写：</h1>
+    <h1 style="margin-top:0;margin-left:8%">信息核对</h1>
     <div class="checkinfo">
       <el-form label-position="left" label-width="20%" :model="signup">
         <el-form-item label="姓名">
           <el-input v-model="signup.username"></el-input>
         </el-form-item>
         <el-form-item label="性别">
-          <el-select v-model="signup.sex" placeholder="请选择" style="width:100%">
-            <el-option
-              v-for="item in sex"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+          <el-radio v-model="signup.sex" label="男">男</el-radio>
+          <el-radio v-model="signup.sex" label="女">女</el-radio>
         </el-form-item>
         <el-form-item label="年级">
           <el-select v-model="signup.grade" placeholder="请选择" style="width:100%">
@@ -57,8 +51,8 @@
         <el-form-item label="手机">
           <el-input v-model="signup.phone" maxlength="11"></el-input>
         </el-form-item>
-        <el-form-item label="第一志愿">
-          <el-select v-model="signup.first" placeholder="请选择" style="width:100%">
+        <el-form-item label="第一志愿" label-width="30%">
+          <el-select v-model="signup.first" placeholder="请选择" style="width:100%;float:right">
             <el-option
               v-for="item in departments"
               :key="item.value"
@@ -67,8 +61,8 @@
             ></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="第二志愿">
-          <el-select v-model="signup.second" placeholder="请选择" style="width:100%">
+        <el-form-item label="第二志愿" label-width="30%">
+          <el-select v-model="signup.second" placeholder="请选择" style="width:100%;float:right">
             <el-option
               v-for="item in departments"
               :key="item.value"
@@ -77,7 +71,7 @@
             ></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="是否服从调剂">
+        <el-form-item label="是否服从调剂" label-width="40%">
           <el-select v-model="signup.adjust" style="width:100%">
             <el-option
               v-for="item in adjustment"
@@ -87,8 +81,15 @@
             ></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="自我介绍">
-          <el-input type="textarea" v-model="signup.description" maxlength="50"></el-input>
+        <el-form-item label-width="0%" style="display:flex;flex-direction:column;">
+          <div style="font-size:18px;color:#8c523b">自我介绍</div>
+          <el-input
+            type="textarea"
+            placeholder="不得多于50字噢"
+            v-model="signup.description"
+            maxlength="50"
+            style="width:100%"
+          ></el-input>
         </el-form-item>
         <div class="button">
           <div class="errmsg" v-show="showerr">{{errmsg}}</div>
@@ -97,7 +98,7 @@
         </div>
       </el-form>
     </div>
-    <div class="bottom">
+    <div class="bottom-pic">
       <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
@@ -142,7 +143,8 @@ export default {
         {
           value: "大一",
           label: "大一"
-        }],
+        }
+      ],
       area: [
         {
           value: "南校",
@@ -204,36 +206,65 @@ export default {
       .catch(err => {
         console.log(err);
       });
-    this.$axios
-      .get(host + "/school", header)
-      .then(response => {
-        if (response.data.errcode == 1) {
-          //获取数据后先格式化,for循环的性能不如map()好
-          var arr = response.data.data;
-          //第一遍for循环，把数组转为json数组
-          var jsonArr = new Array();
-          for (var i = 0; i < arr.length; i++) {
-            jsonArr[i] = {};
-            jsonArr[i]["value"] = i;
-            jsonArr[i]["label"] = arr[i];
-          }
-          //第二遍使用map()将数据传入this.schools中
-          var newArr = jsonArr.map(val => {
-            let json = {};
-            json.value = val.label;
-            json.label = val.label;
-            return json;
-          });
-          this.schools = newArr;
-        } else {
-          console.log("some err");
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
   },
   methods: {
+    changeArea(area) {
+      console.log(area);
+      var data = new FormData();
+      data.append("area", area);
+      this.$axios
+        .post(host + "/department", data, header)
+        .then(response => {
+          if (response.data.errcode == 1) {
+            var arr = response.data.data;
+            var jsonArr = new Array();
+            for (var i = 0; i < arr.length; i++) {
+              jsonArr[i] = {};
+              jsonArr[i]["value"] = i;
+              jsonArr[i]["label"] = arr[i];
+            }
+            var newArr = jsonArr.map(val => {
+              let json = {};
+              json.value = val.label;
+              json.label = val.label;
+              return json;
+            });
+            this.departments = newArr;
+          }
+          console.log(response);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      this.$axios
+        .post(host + "/school", data, header)
+        .then(response => {
+          if (response.data.errcode == 1) {
+            //获取数据后先格式化,for循环的性能不如map()好
+            var arr = response.data.data;
+            //第一遍for循环，把数组转为json数组
+            var jsonArr = new Array();
+            for (var i = 0; i < arr.length; i++) {
+              jsonArr[i] = {};
+              jsonArr[i]["value"] = i;
+              jsonArr[i]["label"] = arr[i];
+            }
+            //第二遍使用map()将数据传入this.schools中
+            var newArr = jsonArr.map(val => {
+              let json = {};
+              json.value = val.label;
+              json.label = val.label;
+              return json;
+            });
+            this.schools = newArr;
+          } else {
+            console.log("some err");
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     toHome() {
       this.$router.push("/home");
     },
@@ -268,41 +299,80 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    },
+    }
   }
 };
 </script>
 
 <style>
-.bg h1 {
-  text-align: left;
-  margin-top: 10%;
-}
 .bg {
   background-color: #f2f7dc;
-  position: absolute;
-  width: 100%;
 }
-
 .checkinfo {
   width: 85%;
-  margin: 20% auto;
-  z-index: 200;
+  margin: 10% auto;
+}
+.el-form-item__label,
+.el-select .el-input .el-select__caret {
+  color: #8c523b;
+  font-size: 18px;
+}
+.bg h1 {
+  font-weight: 100;
+  text-align: left;
+  color: #8c523b;
+  padding-top:10%;
+  padding-left: 0%;
 }
 .button {
   margin: 0;
   text-align: center;
-  display: flex;
-  flex-direction: column;
 }
 .errmsg {
   color: red;
   font-size: 10px;
   margin: 3%;
 }
-.bg .checkinfo .button button {
-  margin: 5% auto;
-  width: 60%;
-  z-index: 200;
+.el-input input,
+.el-textarea textarea,
+.el-radio .el-radio__inner {
+  background-color: transparent;
+  border: #996148 dashed 1.6px;
+  border-radius: 9pt;
+  color: #996148;
 }
+.el-radio .el-radio__label {
+  color: #996148;
+  font-size: 15px;
+}
+.el-textarea textarea {
+  width: 100%;
+  margin-left: 0;
+  height: 100px;
+}
+.checkinfo .button button {
+  margin: auto;
+  width: 60%;
+  margin-top: 10%;
+}
+.el-button {
+  border: #89c997 solid 1px;
+  color: #89c997;
+  background-color: transparent;
+  width: 60%;
+  border-radius: 9pt;
+}
+.el-button:hover {
+  background-color: #89c997;
+  color: #ffffff;
+  outline: none;
+}
+.el-form-item__content {
+  margin-left: 0;
+}
+.el-input input::placeholder,
+.el-textarea textarea::placeholder {
+  color: #d2c5ad;
+}
+
 </style>

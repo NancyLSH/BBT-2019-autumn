@@ -1,6 +1,7 @@
 <template>
   <div class="success">
     <h1>{{status}}成功</h1>
+            <div class="pic"><img src="../assets/6.png" style="width:52px;"></div>
     <div class="btn">
       <el-button @click="toHome">返回</el-button>
       <el-button @click="toCheck">查看</el-button>

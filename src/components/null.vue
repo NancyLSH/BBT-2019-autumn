@@ -1,6 +1,7 @@
 <template>
     <div class="null">
         <h1>尚未报名</h1>
+        <div class="pic"><img src="../assets/6.png" style="width:52px;"></div>
         <div class="btn">
             <el-button @click="toSignup">前往报名</el-button>
             <el-button @click="toHome">返回</el-button>

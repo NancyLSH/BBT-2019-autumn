@@ -1,8 +1,9 @@
+// 动画需要完善
 <template>
   <div class="bottom" @click="toHome">
     <img class="bbt" src="../../public/static/1-1.png" />
     <img class="calendar" src="../../public/static/1-3.png" />
-    <svg width="300" height="500" xmlns="http://www.w3.org/2000/svg">
+    <svg width="300" height="550" xmlns="http://www.w3.org/2000/svg">
       <image id="leaf" xlink:href="../../public/static/1-4.png" x="0" y="0" height="60" width="60" />
       <animateMotion
         xlink:href="#leaf"
@@ -58,12 +59,13 @@ export default {
 .tip {
   z-index: 35;
   position: absolute;
-  bottom: 4%;
-  left: 30%;
-  width: 40%;
+  bottom: 5.4%;
+  left: 32.5%;
+  width: 35%;
   background-color: #f2f7dc26;
   color: #fbfbfb;
   border-radius: 18pt;
+  font-weight: 100;
 }
 .bottom,
 .bottom-pic img {
@@ -74,16 +76,18 @@ export default {
   z-index: 30;
 }
 .bbt {
-  width: 24%;
+  height: 46%;
+  /* width: 46%; */
   position: absolute;
-  left: 15%;
-  top: 3%;
-  z-index: 5;
+  left: 15.2%;
+  top: 6%;
+  z-index: 35;
 }
 .calendar {
   position: absolute;
-  width: 50%;
-  right: 5%;
+  width: 47.6%;
+  right: 9.8%;
+  top:2%;
 }
 
 svg {

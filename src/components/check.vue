@@ -2,7 +2,7 @@
   <div class="check">
     <h1>查看报名</h1>
     <el-form label-position="left" label-width="20%" :model="check">
-      <el-form-item label="手机号">
+      <el-form-item label="手机号" label-width="25%">
         <el-input v-model="check.phone" maxlength="11"></el-input>
       </el-form-item>
       <el-form-item label="姓名">
@@ -91,7 +91,7 @@ export default {
   text-align: left;
   color: #8c523b;
   padding-top: 10%;
-  padding-left: 10%;
+  padding-left: 0%;
   margin-top: 25%;
 }
 .check form {
@@ -111,7 +111,7 @@ export default {
   bottom: 0;
 }
 .check .btn {
-  margin-top: 25%;
+  margin-bottom: 10%;
 }
 .check .btn button {
   margin: auto;

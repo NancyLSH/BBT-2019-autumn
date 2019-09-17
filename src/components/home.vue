@@ -1,22 +1,34 @@
+//button hover 未完成
 <template>
   <div class="home bg">
     <div class="top btns">
-      <el-button>点击进入游戏</el-button>
+      <div class="top-pic">
+        <img src="../assets/2-1.png" style="width:190.6px;" />
+      </div>
+      <div class="container" @click="toGame">
+        <div class="tizai">
+          <img src="../assets/2-2.png" style="width:123.8px" />
+        </div>
+        <div class="text-pic">
+          <img src="../assets/2-5.png" style="width:33.7px" />
+          <img src="../assets/2-3.png" style="width:54.4px;padding-left:2.5%" />
+        </div>
+      </div>
     </div>
     <div class="bottom btns">
-      <el-button @click="toSignup">开始报名</el-button>
+      <el-button :autofocus=true @click="toSignup">开始报名</el-button>
       <el-button @click="toIntroduction">部门介绍</el-button>
       <el-button @click="toCheck">查看报名</el-button>
     </div>
     <!-- <div class="href" @click="toBackstage">内部查询请点击此处</div> -->
     <div class="bottom-pic">
-      <img src="../assets/2.png" />
+      <img src="../assets/3.png" />
     </div>
   </div>
 </template>
 
 <script>
-import {wxshare} from "../api/api"
+import { wxshare } from "../api/api";
 export default {
   name: "home",
   methods: {
@@ -24,16 +36,19 @@ export default {
       this.$router.push("/signup");
     },
     toIntroduction() {
-      this.$router.push("/introduction");
+      this.$router.push("/bbt");
     },
     toCheck() {
       this.$router.push("/check");
     },
-    toBackstage(){
-      this.$router.push("/backstage")
+    toBackstage() {
+      this.$router.push("/backstage");
+    },
+    toGame(){
+      window.location.href="https://hemc.100steps.net/2019/autumn-recruit/game.html"
     }
   },
-  mounted:function(){
+  mounted: function() {
     // wxshare(this)
   }
 };
@@ -46,21 +61,31 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-.top {
-  margin-top: 15%;
+.top-pic {
+  margin-top: 11.8%;
 }
+.home .container {
+  display: flex;
+  justify-content: center;
+}
+.home .text-pic {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
 .btns {
   text-align: center;
   width: 100%;
 }
 .btns .el-button {
-  margin: 4.4% auto;
+  margin: 2.4% auto;
 }
 .bottom {
   display: flex;
   flex-direction: column;
   z-index: 5;
-  margin-bottom: 20%;
+  margin-bottom: 32.5%;
 }
 .bg {
   text-align: center;
@@ -81,19 +106,13 @@ export default {
   border: #89c997 solid 1px;
   color: #89c997;
   background-color: transparent;
-  width: 43%;
+  width: 42.8%;
+  height: 4.8%;
   border-radius: 9pt;
 }
-.el-button:hover {
+.el-button:hover,.el-button:focus,.el-button:active {
   background-color: #89c997;
   color: #ffffff;
-  outline:none;
-}
-.href{
-  color:white;
-  position: relative;
-  bottom:2%;
-  font-size: 12px;
-  z-index: 3;
+  outline: none;
 }
 </style>

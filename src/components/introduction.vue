@@ -1,22 +1,27 @@
 <template>
   <div class="introduction">
-    <el-button style="margin-top:50%" type="info" @click="toDetail(0)">百步梯介绍</el-button>
-    <el-button type="info" @click="toDetail(1)">外联部介绍</el-button>
-    <el-button type="info" @click="toDetail(2)">节目部介绍</el-button>
-    <el-button type="info" @click="toDetail(3)">人力资源部介绍</el-button>
-    <el-button type="info" @click="toDetail(4)">编辑部介绍</el-button>
-    <el-button type="info" @click="toDetail(5)">综合新闻部介绍</el-button>
-    <el-button type="info" @click="toDetail(6)">综合管理部介绍</el-button>
-    <el-button type="info" @click="toDetail(7)">策划推广部介绍</el-button>
-    <el-button type="info" @click="toDetail(8)">视觉设计部介绍</el-button>
-    <el-button type="info" @click="toDetail(9)">技术部介绍</el-button>
-    <el-button type="info" @click="toDetail(10)">视频部介绍</el-button>
-    <div class="bottom-pic"><img src="../assets/3.png" style="width:100%;vertical-align: bottom;"></div>
+    <div class="container">
+      <div class="inner">
+        <el-button type="info" @click="toDetail(1)">外联部</el-button>
+        <el-button type="info" @click="toDetail(2)">节目部</el-button>
+        <el-button type="info" @click="toDetail(3)">人力资源部</el-button>
+        <el-button type="info" @click="toDetail(4)">编辑部</el-button>
+        <el-button type="info" @click="toDetail(5)">综合新闻部</el-button>
+        <el-button type="info" @click="toDetail(6)">综合管理部</el-button>
+        <el-button type="info" @click="toDetail(7)">策划推广部</el-button>
+        <el-button type="info" @click="toDetail(8)">视觉设计部</el-button>
+        <el-button type="info" @click="toDetail(9)">技术部</el-button>
+        <el-button type="info" @click="toDetail(10)">视频部</el-button>
+      </div>
+    </div>
+    <div class="bottom-pic">
+      <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
+    </div>
   </div>
 </template>
 
 <script>
-import {wxshare} from "../api/api"
+import { wxshare } from "../api/api";
 export default {
   name: "introduction",
   methods: {
@@ -29,7 +34,7 @@ export default {
       });
     }
   },
-  mounted:function(){
+  mounted: function() {
     // wxshare(this)
   }
 };
@@ -38,17 +43,22 @@ export default {
 <style>
 /* element组件与sibling兄弟选择器的问题 */
 .introduction {
+  background-color: #f2f7dc;
+}
+.introduction .container {
+  height: 500px;
+  width: 100%;
+  padding-top: 12.7%;
+    overflow: scroll;
+}
+.introduction .container .inner{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #F2F7DC;
 }
 .el-button--info {
   margin: 20px auto;
   width: 50%;
-}
-.el-button + .el-button {
-  margin-left: auto;
 }
 .el-button {
   border: #89c997 solid 1px;
@@ -56,10 +66,11 @@ export default {
   background-color: transparent;
   width: 50%;
   border-radius: 9pt;
+  margin-left: auto !important;
 }
 .el-button:hover {
   background-color: #89c997;
   color: #ffffff;
-  outline:none;
+  outline: none;
 }
 </style>

@@ -12,6 +12,7 @@ import detail from "../components/detail"
 import nosignup from "../components/null"
 import backstage from "../components/backstage"
 import backstageinfo from "../components/backstageinfo"
+import bbt from "../components/bbt.vue"
 
 Vue.use(VueRouter)
 Vue.use(Meta)
@@ -59,6 +60,9 @@ export default new VueRouter({
             name:'backstageinfo',
             path:'/backstageinfo',
             component:backstageinfo
+        },{
+            path:"/bbt",
+            component:bbt
         }
     ]
 })
