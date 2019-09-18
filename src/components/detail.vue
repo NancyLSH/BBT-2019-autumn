@@ -129,7 +129,7 @@ h1 {
   width: 73%;
   margin: 10% 13.5%;
   overflow: scroll;
-  height: 160px;
+  height: 95px;
   color: #4c6255;
 }
 .detail .btn {
