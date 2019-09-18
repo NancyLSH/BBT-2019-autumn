@@ -106,9 +106,9 @@ export default {
   font-size: 10px;
   margin: 3%;
 }
-.bottom {
-  position: absolute;
-  bottom: 0;
+.check .bottom {
+  position: relative;
+  top: 0%;
 }
 .check .btn {
   margin-top:10%;
