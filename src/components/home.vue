@@ -7,7 +7,7 @@
       </div>
       <div class="container" @click="toGame">
         <!-- <div class="tizai"> -->
-          <img src="../assets/2-2.png" style="width:34.6%;flex:0.1 0 1px" />
+          <img src="../assets/2-2.png" style="width:34.6%;flex:0.1 0 1px;margin-left:10%" />
         <!-- </div> -->
         <div class="text-pic">
           <img src="../assets/2-5.png" style="width:30%" />

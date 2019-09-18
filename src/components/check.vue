@@ -1,13 +1,13 @@
 <template>
   <div class="check">
     <h1>查看报名</h1>
-    <el-form label-position="left" label-width="20%" :model="check">
-      <el-form-item label="手机号" label-width="25%">
+    <el-form label-position="left" label-width="25%" :model="check">
+      <el-form-item label="手机号">
         <el-input v-model="check.phone" maxlength="11"></el-input>
       </el-form-item>
-      <!-- <el-form-item label="姓名">
+      <el-form-item label="姓名">
         <el-input v-model="check.username"></el-input>
-      </el-form-item> -->
+      </el-form-item>
       <div class="btn">
         <div class="errmsg" v-show="showerr">{{errmsg}}</div>
         <el-button @click="onCheck">点击查看</el-button>
@@ -42,7 +42,7 @@ export default {
   methods: {
     onCheck() {
       var data = new FormData();
-      // data.append("username", this.check.username);
+      data.append("username", this.check.username);
       data.append("phone", this.check.phone);
       this.$axios
         .post(host + "/judgeRecruit", data, header)
@@ -53,7 +53,7 @@ export default {
             this.$router.push({
               name: "checkinfo",
               params: {
-                // username: this.check.username,
+                username: this.check.username,
                 phone: this.check.phone
               }
             });
@@ -83,7 +83,7 @@ export default {
 .check {
   background-color: #f2f7dc;
   position: absolute;
-  bottom: 0;
+  top: 0;
   height: 100%;
   width: 100%;
 }
@@ -92,10 +92,10 @@ export default {
   color: #8c523b;
   padding-top: 10%;
   padding-left: 0%;
-  margin-top: 25%;
+  margin-top: 20%;
 }
 .check form {
-  margin: 20% auto;
+  margin: 10% auto;
   width: 80%;
 }
 .check .btn {
@@ -111,6 +111,11 @@ export default {
   bottom: 0;
 }
 .check .btn {
+  margin-top:10%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   margin-bottom: 0%;
 }
 .check .btn button {
