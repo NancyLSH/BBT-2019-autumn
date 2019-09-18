@@ -2,7 +2,7 @@
 <template>
   <div class="detail">
     <el-carousel
-      height="520px"
+      height="80%"
       :initial-index="index"
       :autoplay="false"
       indicator-position="none"
@@ -115,13 +115,14 @@ h1 {
   text-align: center;
   color: #4c6255;
   font-weight: 100;
-  margin-top: 40%;
+  margin-top: 15%;
 }
 .detail {
   background-color: #f2f7dc;
   position: absolute;
+  height: 100%;
   width: 100%;
-  bottom: 0;
+  top: 0
 }
 .content {
   width: 73%;
@@ -145,7 +146,7 @@ h1 {
   margin-top: 5%;
 }
 .detail .bottom-pic {
-  position: relative;
+  position: absolute;
   bottom: 0;
 }
 .el-carousel__arrow {
@@ -164,5 +165,8 @@ h1 {
 }
 .el-carousel__arrow--right {
   background-image: url("../assets/4-2.png");
+}
+.el-carousel__container{
+  height: 100%;
 }
 </style>

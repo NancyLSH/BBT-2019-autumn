@@ -52,6 +52,7 @@ export default {
     bottom: 0;
 }
 .bbt-info .btn{
-  margin-top: 10%
+  margin-bottom: -10%;
+  z-index:36;
 }
 </style>

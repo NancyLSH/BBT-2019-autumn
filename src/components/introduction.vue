@@ -14,7 +14,7 @@
         <el-button type="info" @click="toDetail(9)">视频部</el-button>
       </div>
     </div>
-    <div class="bottom-pic">
+    <div class="bottom-pic" style="position:absolute;bottom:0">
       <img src="../assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
@@ -44,9 +44,13 @@ export default {
 /* element组件与sibling兄弟选择器的问题 */
 .introduction {
   background-color: #f2f7dc;
+  height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 .introduction .container {
-  height: 490px;
+  height: 72.3%;
   width: 100%;
   padding-top: 12.7%;
     overflow: scroll;
@@ -68,7 +72,7 @@ export default {
   border-radius: 9pt;
   margin-left: auto !important;
 }
-.el-button:hover {
+.el-button:hover,.el-button:active,.el-button:focus {
   background-color: #89c997;
   color: #ffffff;
   outline: none;
