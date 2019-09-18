@@ -177,10 +177,10 @@ export default {
   },
   mounted: function() {
     // wxshare(this)
-    var username = this.$route.params.username;
+    // var username = this.$route.params.username;
     var phone = this.$route.params.phone;
     var check = new FormData();
-    check.append("username", username);
+    // check.append("username", username);
     check.append("phone", phone);
     this.$axios
       .post(host + "/information", check, header)

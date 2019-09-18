@@ -7,11 +7,11 @@
       </div>
       <div class="container" @click="toGame">
         <!-- <div class="tizai"> -->
-          <img src="../assets/2-2.png" style="width:34.6%" />
+          <img src="../assets/2-2.png" style="width:34.6%;flex:0.1 0 1px" />
         <!-- </div> -->
         <div class="text-pic">
           <img src="../assets/2-5.png" style="width:30%" />
-          <img src="../assets/2-3.png" style="width:64.5%;padding-left:2.5%" />
+          <img src="../assets/2-3.png" style="width:64.5%;padding-left:2.5%;" />
         </div>
       </div>
     </div>
@@ -68,8 +68,8 @@ export default {
   display: flex;
   justify-content: center;
   width: 60%;
-  height: 50% !important;
     margin: auto;
+      height: 50% !important;
 }
 .home .text-pic {
   display: flex;
@@ -80,6 +80,7 @@ export default {
 .btns {
   text-align: center;
   width: 100%;
+  z-index: 35;
 }
 .btns .el-button {
   margin: 2.4% auto;

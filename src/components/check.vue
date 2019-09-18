@@ -5,9 +5,9 @@
       <el-form-item label="手机号" label-width="25%">
         <el-input v-model="check.phone" maxlength="11"></el-input>
       </el-form-item>
-      <el-form-item label="姓名">
+      <!-- <el-form-item label="姓名">
         <el-input v-model="check.username"></el-input>
-      </el-form-item>
+      </el-form-item> -->
       <div class="btn">
         <div class="errmsg" v-show="showerr">{{errmsg}}</div>
         <el-button @click="onCheck">点击查看</el-button>
@@ -42,7 +42,7 @@ export default {
   methods: {
     onCheck() {
       var data = new FormData();
-      data.append("username", this.check.username);
+      // data.append("username", this.check.username);
       data.append("phone", this.check.phone);
       this.$axios
         .post(host + "/judgeRecruit", data, header)
@@ -53,7 +53,7 @@ export default {
             this.$router.push({
               name: "checkinfo",
               params: {
-                username: this.check.username,
+                // username: this.check.username,
                 phone: this.check.phone
               }
             });

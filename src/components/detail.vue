@@ -2,14 +2,15 @@
 <template>
   <div class="detail">
     <el-carousel
-      height="80%"
+      height="90%"
       :initial-index="index"
       :autoplay="false"
       indicator-position="none"
       arrow="always"
-      style="height:80%"
+      style="height:90%"
+      ref="carousel"
     >
-      <el-carousel-item v-for="item in description" :key="item.value">
+      <el-carousel-item v-for="item in description" :key="item.value" name="index">
         <h1>{{item.title}}</h1>
         <div class="pic">
           <img src="../../src/assets/4.png" style="width:70%" />
@@ -33,6 +34,8 @@ export default {
   name: "detail",
   data() {
     return {
+      carousel: "",
+      x: 0,
       index: null,
       description: [
         {
@@ -106,6 +109,19 @@ export default {
   methods: {
     toSignup() {
       this.$router.push("/signup");
+    },
+    touchstart(e) {
+      this.x = e.targetTouches[0].clientX;
+    },
+    touchmove(e) {
+      var newX = e.targetTouches[0].clientX;
+      console.log(newX);
+      if (newX - this.x > 0) {
+        this.$rels.carousel.next;
+      }
+      if (newX - this.x < 0) {
+        this.$rels.carousel.prev;
+      }
     }
   }
 };
@@ -123,18 +139,18 @@ h1 {
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 0
+  top: 0;
 }
 .content {
   width: 73%;
   margin: 10% 13.5%;
   overflow: scroll;
-  height: 95px;
+  height: 175px;
   color: #4c6255;
 }
 .detail .btn {
   position: relative;
-  bottom: 0;
+  bottom: 14%;
   margin: 0;
 }
 .pic,
@@ -151,8 +167,8 @@ h1 {
   bottom: 0;
 }
 .el-carousel__arrow {
-  width: 3.4%;
-  height: 2.9%;
+  width: 5%;
+  height: 5%;
   border-radius: 0;
   background: none;
   background-size: 100%;
@@ -167,10 +183,10 @@ h1 {
 .el-carousel__arrow--right {
   background-image: url("../assets/4-2.png");
 }
-.el-carousel__container{
+.el-carousel__container {
   height: 100%;
 }
-.el-carousrl{
-  height: 80%;
+.el-carousrl {
+  height: 90%;
 }
 </style>
