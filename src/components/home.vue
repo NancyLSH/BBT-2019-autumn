@@ -68,8 +68,8 @@ export default {
   display: flex;
   justify-content: center;
   width: 60%;
-    margin: auto;
-      height: 50% !important;
+  margin: auto;
+  height: 112.8px !important;
 }
 .home .text-pic {
   display: flex;

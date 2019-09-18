@@ -152,6 +152,7 @@ h1 {
   position: relative;
   bottom: 14%;
   margin: 0;
+  z-index: 36;
 }
 .pic,
 .detail .btn {

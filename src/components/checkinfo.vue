@@ -192,6 +192,7 @@ export default {
           this.signup.sex = data.sex;
           this.signup.grade = data.grade;
           this.signup.area = data.area;
+          changeArea(this.signup.area)
           this.signup.dormitory = data.dormitory;
           this.signup.school = data.school;
           this.signup.first = data.first;
