@@ -115,7 +115,7 @@ h1 {
   text-align: center;
   color: #4c6255;
   font-weight: 100;
-  margin-top: 35%;
+  margin-top: 40%;
 }
 .detail {
   background-color: #f2f7dc;

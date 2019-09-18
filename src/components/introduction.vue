@@ -2,16 +2,16 @@
   <div class="introduction">
     <div class="container">
       <div class="inner">
-        <el-button type="info" @click="toDetail(1)">外联部</el-button>
-        <el-button type="info" @click="toDetail(2)">节目部</el-button>
-        <el-button type="info" @click="toDetail(3)">人力资源部</el-button>
-        <el-button type="info" @click="toDetail(4)">编辑部</el-button>
-        <el-button type="info" @click="toDetail(5)">综合新闻部</el-button>
-        <el-button type="info" @click="toDetail(6)">综合管理部</el-button>
-        <el-button type="info" @click="toDetail(7)">策划推广部</el-button>
-        <el-button type="info" @click="toDetail(8)">视觉设计部</el-button>
-        <el-button type="info" @click="toDetail(9)">技术部</el-button>
-        <el-button type="info" @click="toDetail(10)">视频部</el-button>
+        <el-button type="info" :autofocus=true @click="toDetail(0)">外联部</el-button>
+        <el-button type="info" @click="toDetail(1)">节目部</el-button>
+        <el-button type="info" @click="toDetail(2)">人力资源部</el-button>
+        <el-button type="info" @click="toDetail(3)">编辑部</el-button>
+        <el-button type="info" @click="toDetail(4)">综合新闻部</el-button>
+        <el-button type="info" @click="toDetail(5)">综合管理部</el-button>
+        <el-button type="info" @click="toDetail(6)">策划推广部</el-button>
+        <el-button type="info" @click="toDetail(7)">视觉设计部</el-button>
+        <el-button type="info" @click="toDetail(8)">技术部</el-button>
+        <el-button type="info" @click="toDetail(9)">视频部</el-button>
       </div>
     </div>
     <div class="bottom-pic">
@@ -46,7 +46,7 @@ export default {
   background-color: #f2f7dc;
 }
 .introduction .container {
-  height: 500px;
+  height: 490px;
   width: 100%;
   padding-top: 12.7%;
     overflow: scroll;

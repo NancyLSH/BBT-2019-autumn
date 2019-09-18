@@ -3,15 +3,15 @@
   <div class="home bg">
     <div class="top btns">
       <div class="top-pic">
-        <img src="../assets/2-1.png" style="width:190.6px;" />
+        <img src="../assets/2-1.png" style="width:50.8%;" />
       </div>
       <div class="container" @click="toGame">
-        <div class="tizai">
-          <img src="../assets/2-2.png" style="width:123.8px" />
-        </div>
+        <!-- <div class="tizai"> -->
+          <img src="../assets/2-2.png" style="width:34.6%" />
+        <!-- </div> -->
         <div class="text-pic">
-          <img src="../assets/2-5.png" style="width:33.7px" />
-          <img src="../assets/2-3.png" style="width:54.4px;padding-left:2.5%" />
+          <img src="../assets/2-5.png" style="width:30%" />
+          <img src="../assets/2-3.png" style="width:64.5%;padding-left:2.5%" />
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@ export default {
   display: flex;
   flex-direction: column;
   z-index: 5;
-  margin-bottom: 32.5%;
+  margin-bottom: 23.5%;
 }
 .bg {
   text-align: center;

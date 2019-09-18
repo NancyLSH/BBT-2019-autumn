@@ -51,4 +51,7 @@ export default {
     position: absolute;
     bottom: 0;
 }
+.bbt-info .btn{
+  margin-top: 10%
+}
 </style>

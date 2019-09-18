@@ -111,7 +111,7 @@ export default {
   bottom: 0;
 }
 .check .btn {
-  margin-bottom: 10%;
+  margin-bottom: 0%;
 }
 .check .btn button {
   margin: auto;
