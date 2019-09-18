@@ -7,6 +7,7 @@
       :autoplay="false"
       indicator-position="none"
       arrow="always"
+      style="height:80%"
     >
       <el-carousel-item v-for="item in description" :key="item.value">
         <h1>{{item.title}}</h1>
@@ -168,5 +169,8 @@ h1 {
 }
 .el-carousel__container{
   height: 100%;
+}
+.el-carousrl{
+  height: 80%;
 }
 </style>
