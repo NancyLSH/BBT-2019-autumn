@@ -22,7 +22,7 @@ export default {
     };
   },
   mounted() {
-    // wxshare(this)
+    wxshare(this)
     this.status = this.$route.params.status;
   },
   methods: {

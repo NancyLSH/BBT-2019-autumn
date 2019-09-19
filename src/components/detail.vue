@@ -102,7 +102,7 @@ export default {
     };
   },
   mounted() {
-    // wxshare(this)
+    wxshare(this)
     this.index = this.$route.params.i;
     console.log(this.index);
   },

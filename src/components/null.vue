@@ -23,7 +23,7 @@ export default {
         }
     },
     mounted:function(){
-        // wxshare(this)
+        wxshare(this)
     }
 }
 </script>

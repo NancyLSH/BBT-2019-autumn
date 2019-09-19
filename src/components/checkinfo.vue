@@ -176,7 +176,7 @@ export default {
     };
   },
   mounted: function() {
-    // wxshare(this)
+    wxshare(this)
     var username = this.$route.params.username;
     var phone = this.$route.params.phone;
     var check = new FormData();

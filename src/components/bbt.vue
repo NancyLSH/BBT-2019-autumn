@@ -13,7 +13,12 @@
   </div>
 </template>
 <script>
+import { wxshare } from "../api/api";
+
 export default {
+  mounted:function(){
+    wxshare()
+  },
   methods: {
     toIntroduction(){
         this.$router.push("/introduction")

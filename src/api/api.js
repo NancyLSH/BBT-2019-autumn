@@ -1,13 +1,13 @@
 import wx from 'weixin-js-sdk'
 
-const host = "http://111.230.183.100:5000"
+const host = "https://hemc.100steps.net/2019/recruit-autumn"
 
 //config中的url
-const index = ""
+const index = "https://hemc.100steps.net/2019/autumn-recruit/index.html"
 //微信分享配图
-const pictureurl = ""
+const pictureurl = "https://hemc.100steps.net/2019/autumn-recruit/static/post.jpg"
 //微信分享链接
-const link = ''
+const link = 'https://hemc.100steps.net/2019/autumn-recruit/index.html'
 
 function wxshare(a) {
     a.$axios

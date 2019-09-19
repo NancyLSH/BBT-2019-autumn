@@ -13,7 +13,7 @@
         <el-button @click="onCheck">点击查看</el-button>
       </div>
     </el-form>
-    <div class="bottom">
+    <div class="check-pic">
       <img src="../../src/assets/3.png" style="width:100%;vertical-align: bottom;" />
     </div>
   </div>
@@ -73,7 +73,7 @@ export default {
         });
     },
     mounted:function(){
-      // wxshare(this)
+      wxshare(this)
     }
   }
 };
@@ -106,9 +106,14 @@ export default {
   font-size: 10px;
   margin: 3%;
 }
-.bottom {
+.bottom{
   position: absolute;
-  bottom: 0;
+  bottom:0;
+}
+.check .check-pic {
+  position: relative;
+  top: 10%;
+  background-clip: #f2f7dc;
 }
 .check .btn {
   margin-top:10%;

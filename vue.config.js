@@ -1,8 +1,8 @@
 module.exports = {
-    publicPath: '././',
-    assetsDir:'./autumn/',
-    outputDir: 'dist',
+    publicPath: "/2019/autumn-recruit",
+    assetsDir: "./autumn/",
+    outputDir: "dist",
     devServer: {
-        port: 8888,
-    },
-}
+        port: 8888
+    }
+};

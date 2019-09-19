@@ -18,7 +18,6 @@ Vue.use(VueRouter)
 Vue.use(Meta)
 
 export default new VueRouter({
-    mode: 'history',
     routes: [{
             path: '/entry',
             component: entry
