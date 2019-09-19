@@ -106,7 +106,6 @@ export default {
   font-size: 10px;
   margin: 3%;
 }
-<<<<<<< HEAD
 .bottom{
   position: absolute;
   bottom:0;
@@ -115,11 +114,6 @@ export default {
   position: relative;
   top: 10%;
   background-clip: #f2f7dc;
-=======
-.check .bottom {
-  position: relative;
-  top: 0%;
->>>>>>> 26ea0420f018f5857602c01c0b20bb203fda8dd8
 }
 .check .btn {
   margin-top:10%;

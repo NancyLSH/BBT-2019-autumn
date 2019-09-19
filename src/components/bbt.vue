@@ -17,7 +17,7 @@ import { wxshare } from "../api/api";
 
 export default {
   mounted:function(){
-    wxshare()
+    wxshare(this)
   },
   methods: {
     toIntroduction(){

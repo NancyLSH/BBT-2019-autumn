@@ -2,13 +2,13 @@
   <div class="introduction">
     <div class="container">
       <div class="inner">
-        <el-button type="info" :autofocus=true @click="toDetail(0)">外联部</el-button>
+        <el-button type="info" :autofocus=true @click="toDetail(0)">外联部 / 市场拓展部</el-button>
         <el-button type="info" @click="toDetail(1)">节目部</el-button>
         <el-button type="info" @click="toDetail(2)">人力资源部</el-button>
-        <el-button type="info" @click="toDetail(3)">编辑部</el-button>
+        <el-button type="info" @click="toDetail(3)">编辑部 / 频道资讯部</el-button>
         <el-button type="info" @click="toDetail(4)">综合新闻部</el-button>
-        <el-button type="info" @click="toDetail(5)">综合管理部</el-button>
-        <el-button type="info" @click="toDetail(6)">策划推广部</el-button>
+        <el-button type="info" @click="toDetail(5)">行政部 / 综合管理部</el-button>
+        <el-button type="info" @click="toDetail(6)">策划推广部 / 形象推广部</el-button>
         <el-button type="info" @click="toDetail(7)">视觉设计部</el-button>
         <el-button type="info" @click="toDetail(8)">技术部</el-button>
         <el-button type="info" @click="toDetail(9)">视频部</el-button>
