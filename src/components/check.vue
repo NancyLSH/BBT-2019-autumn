@@ -9,12 +9,15 @@
         <el-input v-model="check.username"></el-input>
       </el-form-item>
       <div class="btn">
-        <div class="errmsg" v-show="showerr">{{errmsg}}</div>
+        <div class="errmsg" v-show="showerr">{{ errmsg }}</div>
         <el-button @click="onCheck">点击查看</el-button>
       </div>
     </el-form>
     <div class="check-pic">
-      <img src="../../src/assets/3.png" style="width:100%;vertical-align: bottom;" />
+      <img
+        src="../../src/assets/3.png"
+        style="width:100%;vertical-align: bottom;"
+      />
     </div>
   </div>
 </template>
@@ -36,11 +39,14 @@ export default {
         username: ""
       },
       showerr: false,
-      errmsg: ""
+      errmsg: "",
+      canRequest: true
     };
   },
   methods: {
     onCheck() {
+      if (!this.canRequest) return;
+      this.canRequest = false;
       var data = new FormData();
       data.append("username", this.check.username);
       data.append("phone", this.check.phone);
@@ -48,6 +54,7 @@ export default {
         .post(host + "/judgeRecruit", data, header)
         .then(response => {
           console.log(response);
+          this.canRequest = true;
           var res = response.data;
           if (res.errcode === 1) {
             this.$router.push({
@@ -69,11 +76,12 @@ export default {
           }
         })
         .catch(err => {
+          this.canRequest = true;
           console.log(err);
         });
     },
-    mounted:function(){
-      wxshare(this)
+    mounted: function() {
+      wxshare(this);
     }
   }
 };
@@ -106,9 +114,9 @@ export default {
   font-size: 10px;
   margin: 3%;
 }
-.bottom{
+.bottom {
   position: absolute;
-  bottom:0;
+  bottom: 0;
 }
 .check .check-pic {
   position: relative;
@@ -116,7 +124,7 @@ export default {
   background-clip: #f2f7dc;
 }
 .check .btn {
-  margin-top:10%;
+  margin-top: 10%;
   position: relative;
   bottom: 0;
   left: 0;

@@ -172,7 +172,8 @@ export default {
         }
       ],
       showerr: false,
-      errmsg: ""
+      errmsg: "",
+      canRequest: true
     };
   },
   mounted: function() {
@@ -199,6 +200,7 @@ export default {
           this.signup.phone = data.phone;
           this.signup.adjust = data.adjust;
           this.signup.description = data.description;
+          this.changeArea(data.area)
         } else {
           console.log(res);
         }
@@ -269,6 +271,8 @@ export default {
       this.$router.push("/home");
     },
     onChange() {
+      if(!this.canRequest) return ;
+      this.canRequest = false
       var data = new FormData();
       data.append("username", this.signup.username);
       data.append("sex", this.signup.sex);
@@ -285,6 +289,7 @@ export default {
         .post(host + "/modify", data, header)
         .then(response => {
           var res = response.data;
+          this.canRequest = true 
           if (res.errcode == 1) {
             this.$router.push({
               name: "success",
@@ -297,6 +302,7 @@ export default {
           }
         })
         .catch(err => {
+          this.canRequest = true
           console.log(err);
         });
     }

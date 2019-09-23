@@ -156,7 +156,8 @@ export default {
         }
       ],
       showerr: false,
-      errmsg: ""
+      errmsg: "",
+      canRequest: true
     };
   },
   mounted: function() {
@@ -221,6 +222,8 @@ export default {
         });
     },
     onSubmit() {
+      if(!this.canRequest) return ;
+      this.canRequest = false
       var data = new FormData();
       data.append("username", this.signup.username);
       data.append("sex", this.signup.sex);
@@ -248,9 +251,11 @@ export default {
             this.errmsg = res.errmsg;
             console.log(res.errmag);
           }
+          this.canRequest = true 
         })
         .catch(err => {
           console.log(err);
+          this.canRequest = true 
         });
     }
   }
