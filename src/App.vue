@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       isRouterAlive: true,
-      transitionName: "slide-left"
+      transitionName: "fade"
     };
   },
   mounted() {
@@ -44,10 +44,11 @@ export default {
   watch: {
     $route(to, from) {
       // 返回主页右滑，否者左滑
-      this.transitionName =
-        !~to.path.indexOf("home") || ~from.path.indexOf("entry")
-          ? "slide-left"
-          : "slide-right";
+      this.transitionName = !~to.path.indexOf("home")
+        ? "slide-left"
+        : ~from.path.indexOf("entry")
+        ? "fade"
+        : "slide-right";
     }
   }
 };
@@ -68,12 +69,17 @@ export default {
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
-.slide-right-leave-active {
+.slide-right-leave-active,
+.fade-enter-active {
   transition: all 0.5s ease-in-out;
 }
 .slide-left-leave-to,
 .slide-right-enter {
   opacity: 0;
   transform: translate(-100vw, 0);
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
